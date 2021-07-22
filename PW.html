@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aneka Mulgund</title>
+    <meta name="description" content="A high school student on a mission to solve big problems.">
+    <style>
+        
+
+        li,a,button {
+            font-family: 'Catamaran';
+            font-size: 18px;
+            color: #365c7c;
+            text-decoration: none;
+        }
+        .random_header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 10%;
+            box-sizing: border-box;
+            margin: 0;
+            background-color: rgb(213, 233, 250);
+            width: 100%;
+            position: fixed;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            cursor: pointer;
+        }
+        .nav__links {
+            list-style: none;
+        }
+        .nav__links li {
+            display: inline-block;
+            padding: 0 20px;
+        }
+        .nav__links li a {
+            transition: all 0.3s ease 0s;
+        }
+        .nav__links li a:hover {
+            color: #abceeb;
+        }
+        .landing_page {
+            min-height: 750px;
+            background-image: url(file:///Users/anekamulgund/Downloads/IMG_1437%20copy.JPG);    
+            background-size: 100% 900px;
+            padding:0;
+            text-align: center;   
+            margin: 0;
+            }
+        #Title {
+              color:rgb(249,174,84); 
+              text-align: center;
+              padding-top: 330px;
+              position: relative;  
+              font-size: 95px;
+              font-family:"Wonderbar";
+        }
+        #Title2 {
+              color:rgb(240, 232, 223); 
+              text-align: center;
+              position: absolute;  
+              top: 330px;
+              left: 330px;
+              font-size: 95px;
+              font-family:"Wonderbar";
+        }
+        #Description {
+              font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+              font-size: 18px;
+        }
+        @font-face {
+            font-family: Wonderbar;
+            src: url ("wonderbar-font.eot");
+        }
+        @font-face { 
+            font-family: Alegraya-Sans;
+            src: url('https://fonts.gstatic.com/s/alegreyasanssc/v13/mtGh4-RGJqfMvt7P8FUr0Q1j-Hf1BkRl9w5DPYpGMg.woff2');
+        }
+       
+        .About_me {
+            background-color: rgb(215,110,150);
+            min-height:500px;
+            position:relative;
+            z-index: 1px;     
+        
+        }   
+        #intro {
+            min-height:405px;
+            border-image: linear-gradient(45deg, #e49cc7, rgb(241, 240, 238)) 1;
+            border-style: groove;
+            border-width: 100%;
+            color: whitesmoke;
+            position: absolute;
+            right:60px;
+            left:600px;
+            top: 50px;
+            bottom: 50px;
+            text-align:justify;
+            overflow: scroll;
+            font-size: 18px;
+            font-family: 'Open Sans', sans-serif;
+            min-width: 300px;
+            padding: 0 10px;
+            margin-top: none;
+
+        }
+        #pfp {
+            height: 350px;
+            width: 35%;
+            position: relative;
+            top: 75px;
+            left: 60px;
+            align-self: center;
+            margin: left;
+            text-align: center;
+            min-width: 400px;
+            box-shadow: 10px 10px 8px #be3b6d;
+            
+        }
+        .Portfolio {
+            height: 1620px;
+            width: 100%;
+            position: relative;
+            background-color: #fff ;
+            padding-top: 30px;
+        }
+        
+        #My_work {
+            text-align: center;
+            font-family: 'wonderbar';
+            margin-top: 0;
+            margin-bottom: 4px;
+            padding-top: 30px;
+            padding-bottom: 0;
+            font-size: 70px;
+        }
+        #intro2 {
+            color:black;
+            text-align: center;
+            width: 998px;
+            margin-top: 0;
+            margin-left: 16%;
+            font-family: 'Catamaran', sans-serif;;
+            font-weight: 400;
+            font-size: 20px;
+            padding-top: 2px;
+            padding-bottom: 8px;
+
+        }
+
+        .headings {
+            display: flex;
+            justify-content:space-between;
+            align-items: center;
+            /* Use to align headings with image grid*/
+            padding: 0px 250px;
+            box-sizing: border-box;
+            margin-top: 10px;
+            background-color: transparent; 
+            width: 100%;
+            overflow:hidden;
+        }
+        #Articles_heading, #Projects_heading, #Other_heading {
+            border: none;
+            font-size: 20px;
+            border-radius: 10px;
+            padding: 15px 20px;
+            font-family: 'Catamaran', sans-serif;
+            font-weight: 700;
+            color: azure;
+            margin-bottom: 20px;
+        }
+        #Articles_heading {
+            background-color: rgb(118,131,156);
+        }
+        #Projects_heading {
+            background-color: rgb(120,144,156);
+        }
+        #Other_heading {
+            background-color: rgb(119,157,146);
+        }
+
+        .row {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: flex-start;
+            flex-direction: row;
+            max-height: 120vh;
+            justify-content: center;
+            margin: 0 30px;
+            gap: 25px;
+        }
+        .row img {
+            max-width: 30vw;
+            padding: 4px 15px;
+        }
+        .row div:hover {
+            transform: scale(1.05); 
+            cursor: pointer;
+        }
+
+
+        #Portfolio_button {
+            position: absolute;
+            padding: 0 36px;
+            bottom: 40px;
+            left: 45%;
+            border-radius: 27px;
+            border-style: none;
+            color: rgb(238,238,238);
+            border-color: none;
+            border-width: 2px;
+            background-color: black ;
+            font-family: 'Open Sans';
+            font-size: 22px;
+            font-weight:bold;
+            display:inline-block;
+            text-decoration:none;
+            cursor:pointer;
+            line-height:55px;
+            text-align:center;
+            margin:0;
+            height:55px;
+            padding:0px 28px;
+            max-width:66%;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+        
+        .Newsletter {
+            background-color:#365c7c;
+            color: white;
+            margin-top:0;
+            margin-bottom: none;
+            padding-top: 38px;
+            position: relative;
+            width: 100%;
+            height: 900px;
+        }
+        #LOL {
+            margin: 0;
+            padding-top: 8px;
+            padding-right: none;
+            text-align: center;
+            font-size: 60px;
+            font-family: wonderbar;
+        }
+        /* OLD LOL POSITION 
+            position:absolute;
+            top: 38px;
+            left: 480px;   */
+        #Curious {
+            margin-top: none;
+            margin: 0 110px;
+            padding:20px 0;
+            text-align: center;
+            font-size: 18px;
+            font-family: 'Noto Sans JP', sans-serif;
+            position: absolute;
+            top: 120px;
+        }
+        #Sub {
+            font-family: 'Open Sans';   
+            font-weight: 50px;        
+            color: rgb(106, 106, 106);
+            text-align: center;
+        }
+        .Mailchimp {
+            position: absolute;
+            top: 240px;
+        }
+        
+        /*FULL SUBSCRIBE BOX*/
+        #mc_embed_signup {
+            background-color: rgb(222,222,222);
+            border-width: 5px;
+            border-style: solid;
+            border-color: transparent;
+            color: black;
+            clear:left; 
+            font:18px 'Open Sans'; 
+            font-weight: 400; 
+            height: 250px;
+            width:1240px;
+            margin-left: 100px;
+            text-align: center;
+            text-transform: uppercase;
+            margin-bottom: 70px;
+
+        }
+        #mc_embed_signup_scroll {
+            text-align: center;
+            position: relative;
+            padding: 30px;
+        }
+        #line1 {
+            width: 110px;
+            height: 2px;
+            position: absolute;
+            top: 25px;
+            left: 45.5%;
+            background-color:black;
+            border: none;
+            margin-top: none;
+        }
+        #mce-NAME {
+            position: absolute;
+            
+            left: 165px;
+            top: 130px;
+            font-family: 'Open sans';
+            font-weight: 400; 
+            width: 220px;
+            height: 50px;
+            padding-left: 15px;
+            border-radius: 0%;
+            border-style: solid;
+            border-color: rgb(199,199,199);
+        }
+        #mce-EMAIL {
+            position: absolute;
+            left: 503px;
+            top: 130px;
+            font-family: 'Open sans';
+            font-weight: 400;
+            width: 220px;
+            height: 50px;
+            padding-left: 15px;
+            border-radius: 0%;
+            border-style: solid;
+            border-color: rgb(199,199,199);
+        }
+        #mc-embedded-subscribe {
+            position: absolute;
+            right: 165px;
+            top: 130px;
+            font-family: 'Open sans';
+            font-weight: 600;
+            width: 220px;
+            height: 56px;
+            background-color: rgb(106, 106, 106);
+            color: white;
+            text-align: center;
+            padding: 15px;
+            padding-left: 15px;
+            border-radius: 0;
+            border-style: solid;
+            border-color: rgb(149, 148, 163);
+            font-size: 14px;
+            cursor: pointer;
+        }
+        
+        #Editions {
+            padding-top: 18px;
+            padding-bottom: 20px;
+            position:absolute;
+            text-align: center;
+            top: 328px;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 550;
+            font-size: 21px;
+            font-style:bold;
+            width: 1440px;
+            background-color: white;
+            color: black;
+            text-transform: uppercase;
+            z-index: 50;
+            letter-spacing: 11px;
+            word-spacing: 8px;
+        }
+        .news_holder {
+            display: flex;  
+            margin-right: 10px;
+            justify-content: center;
+        }
+        
+        #news {
+            flex: 2;
+            margin-left: +2%;
+           
+        }
+
+        #news_box {
+            height: 290px;
+            width: 1440px;
+            padding-top: 29px;
+            position: absolute;
+            top: 385px;
+            background-color: #fff;
+            z-index: 3;
+        }
+        .contact {
+            position: relative;
+            background-color:rgb(240, 232, 223); 
+            width: auto;
+            height:260px;
+            margin-top: 0;
+            margin-bottom: 0;
+            padding-top: 15px;     
+
+        }
+        #talk {
+            font-family: wonderbar;
+            font-size: 60px;
+            text-align: center;
+            margin: 0;
+            padding-top: 25px;   
+            padding-bottom: none;         
+            color: rgb(45, 46, 54);
+        } 
+        .contact p {
+            margin: 0 50px;
+            color: rgb(45, 46, 54);
+            padding-bottom: 25px;
+            text-align: center;
+            text-transform: none;
+            font-family: 'Catamaran';
+            font-weight: 400;
+            font-size: 20px;
+        }
+        #contact_me {
+            position: absolute;
+            padding: 0 36px;
+            top: 190px;
+            left: 635px;
+            border-radius: 27px;
+            border-style: none;
+            color: rgb(238,238,238);
+            border-color: none;
+            border-width: 2px;
+            background-color: rgb(46, 46, 46) ;
+            font-family: 'Open Sans';
+            font-size: 22px;
+            font-weight:bold;
+            display:inline-block;
+            text-decoration:none;
+            cursor:pointer;
+            line-height:55px;
+            text-align:center;
+            margin:0;
+            height:55px;
+            padding:0px 28px;
+            max-width:66%;
+            white-space:nowrap;
+            overflow:hidden;
+            text-overflow:ellipsis;
+        }
+        footer {
+            margin-top: 0;
+            margin-bottom: none;
+            min-height: 210px;
+            background-color: rgb(45, 46, 54);
+            color: white;
+            position: relative;
+            z-index: 0;
+        }
+        .left {
+            position: absolute;
+            margin-top: none;
+            width: 710px;
+        }
+        .left img {
+            position:absolute;
+            top: 100px;
+            margin-top: none;
+            margin-left: 90px;
+            filter:  brightness(0) invert(1);
+        }
+        #QL {
+            position:absolute ;
+            text-align: center;
+            top: 30px;
+            margin-left: 450px;
+            margin-bottom: 10px;
+            font-size: 22px;
+            font-family: 'Catamaran';
+            z-index: 50;
+            cursor: default;
+            
+        }
+        #left_list {
+            position:absolute;
+            top: 130px;
+            margin-left: 410px;
+            margin-top: -15px;
+            padding-top: none;
+            padding-bottom: 30px;
+            z-index: 99999;
+        }
+        #left_list ul {
+            list-style-type: none;
+        }
+        #left_list li {
+            display: inline;    
+            padding-right: 5px;
+            text-decoration: none;
+            color: white;
+            padding-top: none;
+            cursor: pointer;
+            
+        }
+        #left_list a {
+            font-family: 'Open Sans';
+            color: white;
+            padding-top: none;
+        }
+        .middle {
+            position: absolute;
+            left: 400px;
+            top: 100px;
+            height: auto;
+        }
+
+        #C {
+            padding-top: none;
+            margin-top:     -20px; 
+            margin-left: 800px;
+            font-size: 22px;
+            font-family: 'Catamaran';
+        }
+        #middle_list {
+            position: relative;
+            margin-left: 643px;
+            margin-top: -45px;
+        }
+        #middle_list li {
+            display: inline;
+            padding-right: 10px;
+        }
+        .anchor1{
+            display: block;
+            height: 70px; /*same height as header*/
+            margin-top: -70px; /*same height as header*/
+            visibility: hidden;
+        }
+        .anchor2{
+            display: block;
+            height: 90px; /*same height as header*/
+            margin-top: -90px; /*same height as header*/
+            visibility: hidden;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden
+        }
+        </style>
+    <!----OXYGEN - FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    
+    <!----HIND, BOLD - FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@500&family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    
+    <!----OPEN SANS, LIGHT - FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@500&family=Open+Sans:wght@300&family=Oxygen:wght@300&display=swap" rel="stylesheet">
+    <!----OPEN SANS< BOLD-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap" rel="stylesheet">
+    
+    <!----LEXEND, BOLD - FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Mega&family=Noto+Sans+JP:wght@300&family=Oswald:wght@289&display=swap" rel="stylesheet">
+    
+    <!--ACLONICA and CATAMARAN--->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aclonica&family=Catamaran:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <section class="landing_page">
+        <title>Aneka Mulgund</title>
+        <!---img src="file:///Users/anekamulgund/Downloads/IMG_1437.JPG" width="1432px"--->
+        <div> 
+            <h1 id="Title">Aneka Mulgund</h1>
+            <h1 id="Title2">Aneka Mulgund</h1>
+            <h4 id="Description"></h4>
+        </div>
+        <div class="top-nav">
+            <header class="random_header">
+                <img src="file:///Users/anekamulgund/Downloads/imageedit_18_3125290779.png" class="logo" alt="Aneka Mulgund's logo" width="200px">
+                <a id="#"></a>
+                <nav>
+                    <ul class="nav__links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#aboutme">About</a></li> 
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#newsletter">Newsletter</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <a id="aboutme"></a>
+    </section>
+    <section class="About_me">
+        <div id="pfp">
+        <img src="file:///Users/anekamulgund/Downloads/IMG_3804.jpeg" alt="Girl in an orange sweater, smiling" width="100%" height="350px">
+        </div>
+        <div id="intro">
+            <p>Hey! I'm a high school student who is driven to solve meaningful problems and play a role in nudging our planet toward a safe and sustainable future. The idea of letting this planet go down in flames has always frightened and infuriated me, so today, my passion is to eliminate the threat of climate change. With this ambition, I've spent the past several months taking part in a human accelerator program called The Knowledge Society, which has acted as an enlightening and door-opening creative playground. It was through this program that I realized my potential as a teenager, and with the help of powerful mindset training and exposure to exponential technologies, I've been diving deep into alternative energy, while discovering our current options for rapidly scalable and economically viable climate solutions. </p>
+            <p>As a constant learner who strongly believes that there's no way better to learn than to fail, I love to throw myself into new and uncomfortable challenges. In light of this, forming new connections and staying on top of my goals is always a priortiy for me, so if you would like to follow along on my journey of pursuing my ever-evolving definition of success, a subscription box to my newsletter and a contact form can be found below.  </p>
+        </div>
+ </section>
+    <span class="anchor1" id="portfolio"></span>
+    <section class="Portfolio">
+        <h1 id="My_work">Portfolio</h1>
+        <p id="intro2"><span style="text-transform:none;">Take a look at some of my most interesting pieces of content and projects, or my complete portfolio, below!</span></p>
+        <div class="headings">
+            <button id="Articles_heading">Articles</button>
+            <button id="Projects_heading">Projects</button>  
+            <button id="Other_heading">Other</butoon>
+            </div>
+    <section class="row">                
+                <div id="column"> <a href="https://aneka-mm88.medium.com/nuclear-power-the-underrated-star-we-irrationally-fear-c3812f058747" target=”_blank” ><img src="file:///Users/anekamulgund/Downloads/portfolio_images/nuclear.png" alt="Nuclear fission" width="350px"></a></div>
+                <div id="column"> <a href="https://firebasestorage.googleapis.com/v0/b/tks-life-prod.appspot.com/o/items%2Fuw0zbUBryScEv5WpFBq5CAhtmjN2%2FAizah%2C%20Aneka%2C%20Astha%2C%20Heya.pdf?alt=media&token=d25aadab-f405-4945-8d6e-9e808ad813b7" target=”_blank” ><img src="file:///Users/anekamulgund/Downloads/portfolio_images/briefcase.png" alt="UN unemployemnt project" width="350px"></a></div>
+                <div id="column"><a href="https://youtu.be/ctNe_X_ZUps" target=”_blank” ><img src="file:///Users/anekamulgund/Downloads/portfolio_images/biofuel.png" alt="Video on algae biofuels" width="350px"></a></div>
+                <div id="column"> <a href="https://aneka-mm88.medium.com/thriving-in-the-face-of-pressure-8afafb6bcc45#e94d-bf3e342a8645" target=”_blank” ><img src="file:///Users/anekamulgund/Downloads/portfolio_images/pressu.png" alt="Dealing with pressure" width="350px"></a></div>
+                <div id="column"><a href="https://youtu.be/bcdQZTzcXkc" target=”_blank” ><img src="file:///Users/anekamulgund/Downloads/portfolio_images/wind.png" alt="Wind turbine" width="350px"></a></div>
+                <div id="column"><a href="https://www.notion.so/Explore-ffac85b60d734e4c84b6a85e57e33dc1" target=”_blank” ><img src="file:///Users/anekamulgund/Downloads/portfolio_images/notebook.png" alt="Notes on exponential technologies" width="350px"></a></div>
+                <div id="column"><a href="https://aneka-mm88.medium.com/whats-all-the-hype-around-hydrogen-36de835c1b71" target=”_blank” ><img src="file:///Users/anekamulgund/Downloads/portfolio_images/hydrogen.png" alt="Hydrogen fuel cell technology" width="350px"></a></div>
+                <div id="column"><a href="https://zeo4.ca/" target=”_blank” ><img src="file:///Users/anekamulgund/Downloads/portfolio_images/cow.png" alt="Zeo4 - The methane capture company" width="350px"></a></div>
+                <div id="column"><a href="https://youtu.be/zxJaqEI6pv4" target=”_blank” ><img src="file:///Users/anekamulgund/Downloads/portfolio_images/hack.png" alt="Hack your summer" width="350px"></a></div>
+                <div id="column"><a href="https://aneka-mm88.medium.com/how-much-more-needs-to-happen-for-canada-to-wake-up-1e8ae33476df?source=---------0----------------------------" target=”_blank” > <img src="file:///Users/anekamulgund/Downloads/portfolio_images/indigenous.png" alt="Indigenous people in Canada" width="350px"></a></div>
+    </section>
+    <a href="https://tks.life/profile/aneka.mulgund#portfolio" id="Portfolio_button" >Portfolio</a> 
+    </section>
+<span class="anchor2" id="newsletter"></span>
+ <section class="Newsletter">
+        <h1 id="LOL">What's Going on Now?</h1>
+        <p id="Curious">If you're curious to find out, subscribe to my personal newsletter -
+            I send monthly emails with quick updates on what I'm working on, content that I enjoyed during the month, and other insights and resources! </p>
+ <div class="Mailchimp">
+            <!--Start mc_embed_signup-->
+            <type="text/css">
+            <div id="mc_embed_signup">
+            <form action="https://gmail.us2.list-manage.com/subscribe/post?u=57c8e05df3460df36816bebce&amp;id=c9c19d2d49" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                <div id="mc_embed_signup_scroll">
+                <h2 id="Subs">Subscribe</h2>
+                <hr id="line1" align="center">
+            <div>
+            <div class="mc-field-group">
+                <input type="text" value="" name="NAME" class="" id="mce-NAME" placeholder="Name">
+            </div>
+            <div class="mc-field-group">
+                <input type="email" value="" name="EMAIL" class="required_email" id="mce-EMAIL" placeholder="Email Address">
+            </div>
+                <div id="mce-responses" class="clear">
+                    <div class="response" id="mce-error-response" style="display:none"></div>
+                    <div class="response" id="mce-success-response" style="display:none"></div>
+                </div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_57c8e05df3460df36816bebce_c9c19d2d49" tabindex="-1" value=""></div>
+                <div class="clear"><input type="submit" value=" Sign Up " name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                </div>
+            </form>
+            </div>
+            </div>
+            <h3 id="Editions">Previous Editions</h3>
+            <div id="news_box">
+                <div class="news_holder">
+            
+        <div id="news"><a href="https://mailchi.mp/83a8d33c2259/you-might-want-to-sit-down-for-this-one" target=”_blank”><img src="file:///Users/anekamulgund/Downloads/imageonline-co-whitebackgroundremoved.png" alt="" width="300px"></a></div>
+        <div id="news"><a href="https://mailchi.mp/930f04e45cbd/a-month-to-remember" target=”_blank”><img src="file:///Users/anekamulgund/Downloads/imageonline-co-whitebackgroundremoved%20(1).png" alt="" width="300px"></div>
+        <div id="news"><a href="https://mailchi.mp/b79b3f7c4c7c/getting-creative" target=”_blank”><img src="file:///Users/anekamulgund/Downloads/imageonline-co-whitebackgroundremoved%20(2).png" alt="" width="300px"></div>
+        <div id="news"><a href="https://us2.campaign-archive.com/?u=57c8e05df3460df36816bebce&id=7c18ec6c0b" target=”_blank”><img src="file:///Users/anekamulgund/Downloads/imageonline-co-whitebackgroundremoved%20(4).png" alt="" width="300px"></div>
+            </div>  
+                </div>
+        </section>                
+    <section class="contact"><a id="contact"></a>
+        <h1 id="talk">Get In Touch</h1>
+        <p font-family="Open Sans">If you'd like to send me a message, book a meeting, or connect via social media, see the contact form, Calendly, and social media links below.</p>
+        <div class="typeform">
+            <a href="https://5uwuyjcbcxu.typeform.com/to/Cb0x2HzQ" target=”_blank” id="contact_me" >Contact Me</a> 
+        </div>
+
+    </section>         
+
+    
+    <footer>
+        <div class="left">
+             <img src="file:///Users/anekamulgund/Downloads/imageedit_18_3125290779.png" class="footer_logo" alt="Aneka Mulgund's logo" width="150px">
+            <h6 id="QL">Quick Links</h6>
+            <div>
+                <ul id="left_list">
+                    <li><a href="#">Home  •</a></li>
+                    <li><a href="#aboutme">About Me  •</a></li>
+                    <li><a href="#portfolio">Portfolio  •</a></li>
+                    <li><a href="#newsletter">Newsletter  •</a></li>
+                    <li><a href="#contact">Contact  •</a></li>
+                </ul> 
+            </div>  
+        </div>
+        <div class="middle">
+        <h6 id="C">Connect</h6>
+        <ul id="middle_list" style="list-style-type: none;">
+            <li><a href="https://www.linkedin.com/in/aneka-mulgund-6b34991b7/" target=”_blank”><img src="https://image.flaticon.com/icons/png/512/174/174857.png" alt="LinkedIn icon" width="25px" style="filter: brightness(0) invert(1)" class="Link"></a></li>
+            <li><a href="https://www.youtube.com/channel/UCImDFhM3ptaTvY_0EvWhYBA" target=”_blank”><img src="https://pngimage.net/wp-content/uploads/2018/06/logo-youtube-png-blanco-5.png" alt="Youtube icon" width="30px" class="You"></a></li>
+            <li><a href="https://aneka-mm88.medium.com/" target=”_blank”><img src="https://seeklogo.com/images/M/medium-logo-F0ACFCCD58-seeklogo.com.png" alt="Medium icon" width="30px" style="filter: brightness(0) invert(1)" class="Med"></a></li>
+            <li><a href="mailto: aneka.mm88@gmail.com" target=”_blank”><img src="https://www.pngkit.com/png/full/330-3309305_gmail-icon-white-png.png" alt="Email icon" width="30px" class="Em"></a></li>
+            <li><a href="https://calendly.com/aneka-m/30min" target=”_blank”><img src="https://medicinex.stanford.edu/wp-content/uploads/2017/10/calendar-icon-white.png" alt="Calendly icon" width="25px" class="Cal"></a></li>
+        </ul>
+
+
+        </div>
+        <div class="right"></div>
+    </footer>
+    
+    
+
+
+
+</body>
+</html>
